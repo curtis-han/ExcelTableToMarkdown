@@ -47,7 +47,7 @@ if __name__ == '__main__':
             continue
 
         path = './' + sheet.name + '.md'
-        with open(path, 'w+') as w_file:
+        with open(path, 'w+', encoding='utf-8') as w_file:
             for row_index in range(0, row_max):
                 index_start = sheet.cells[row_index, 0]
                 index_end = sheet.cells[row_index, column_max-1]
