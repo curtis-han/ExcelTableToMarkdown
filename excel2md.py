@@ -8,6 +8,8 @@ def mkline(datas):
     for data in datas:
         if isinstance(data, str):
             line_str += data
+        elif isinstance(data, (int, float)):
+            line_str += str(int(data))
         else:
             line_str += ' '
         line_str += ' | '
@@ -52,6 +54,7 @@ if __name__ == '__main__':
                 index_start = sheet.cells[row_index, 0]
                 index_end = sheet.cells[row_index, column_max-1]
                 line_values = sheet.range(index_start, index_end).value
+                print("Line Value is", line_values);
                 w_file.write(mkline(line_values)) 
 
                 if row_index == 0:
